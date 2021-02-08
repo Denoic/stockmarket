@@ -101,3 +101,6 @@ while True:
         cls()
         pricetracker(InpStock)
         continue
+    
+    elif choice1.lower() == "trends":
+        cls()
