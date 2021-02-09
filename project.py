@@ -80,6 +80,25 @@ def Info(stock):
 def pricetracker(stock):
     print()
                 
+def trending():
+    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers"
+
+    querystring = {"region":"US"}
+
+    headers = {
+        'x-rapidapi-key': "623ecea589msh70f225267987d8ep18f5c1jsn34e5895911b9",
+        'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    result = response.json()
+    print('Name:')
+    print(result.get("finance").get(0).get("quotes").get(0).get("shortName"))
+    print()
+    print('Symbol:')
+    print(result.get("finance").get(0).get("quotes").get(0).get("symbol"))
+    print()
 
 while True:
     cls()
@@ -104,3 +123,4 @@ while True:
     
     elif choice1.lower() == "trends":
         cls()
+        trending()
