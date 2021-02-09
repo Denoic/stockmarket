@@ -4,6 +4,7 @@ import keyboard
 from rich.console import Console
 from rich.markdown import Markdown
 from rich import print
+import json
 
 def filecreation(stock):
     url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-detail"
@@ -74,8 +75,6 @@ def Info(stock):
     print("[bold red]Website:[/bold red]")
     print(result.get("summaryProfile").get("website"))
     print()
-    print("Press ENTER to continue...")
-    keyboard.wait('enter')
     
 def pricetracker(stock):
     print()
@@ -93,17 +92,23 @@ def trending():
     response = requests.request("GET", url, headers=headers, params=querystring)
 
     result = response.json()
-    print('Name:')
-    print(result.get("finance").get(0).get("quotes").get(0).get("shortName"))
+
+    print(result)
     print()
-    print('Symbol:')
-    print(result.get("finance").get(0).get("quotes").get(0).get("symbol"))
     print()
+    print()
+    print()
+    print(result.get('finance')['result'])
+
+def news():
+    print('news')
 
 while True:
-    cls()
-    print("Info Price Trends")
-    choice1 = input("Select one: ")
+    choice1 = ""
+    while choice1 == "":
+        cls()
+        print("Info Price Trends News")
+        choice1 = input("Select one: ")
 
     cls()
     if choice1.lower() == "info":
@@ -112,15 +117,19 @@ while True:
         cls()
         filecreation(InpStock)
         Info(InpStock)
-        continue
     
     elif choice1.lower() == "price":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
         pricetracker(InpStock)
-        continue
     
     elif choice1.lower() == "trends":
         cls()
         trending()
+    
+    elif choice1.lower() == "news":
+        cls()
+
+    print("Press ENTER to continue...")
+    keyboard.wait("enter")
