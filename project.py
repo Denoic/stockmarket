@@ -1,44 +1,42 @@
-import requests
-import os
 import keyboard
-from rich.console import Console
-from rich.markdown import Markdown
-from rich import print
 import json
 from info import Info
 from pricetracker import pricetracker
 from trending import trends
 from news import news
+from info import filecreation
+from cls import cls
+from exit import exit
 
-def cls(): return os.system('cls')
-                
+  
 while True:
-    choice1 = ""
-    while choice1 == "":
-        cls()
-        print("Info Price Trends News")
-        choice1 = input("Select one: ")
-        choice1 = choice1.lower()
+    print("Info Price Trends News")
+    choice = input("Select one: ")
+    choice = choice.lower()
 
     cls()
-    if choice1 == "info":
+    if choice == "info":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
+        filecreation(InpStock)
         Info(InpStock)
     
-    elif choice1 == "price":
+    elif choice == "price":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
         pricetracker(InpStock)
     
-    elif choice1 == "trends":
+    elif choice == "trends":
         cls()
         trends()
     
-    elif choice1 == "news":
+    elif choice == "news":
         news()
 
-    print("Press ENTER to continue...")
-    keyboard.wait("enter")
+
+    print("Press any key to continue...")
+    print("If you want to exit the app. Press ESC")
+    keyboard.wait(hotkey="esc", suppress=False, trigger_on_release=exit())
+    choice = "" 
