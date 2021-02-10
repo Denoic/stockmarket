@@ -1,6 +1,6 @@
 from rich.console import Console
 from rich.markdown import Markdown
-import rich
+from rich import print
 import os
 import requests
 

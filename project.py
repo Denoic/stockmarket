@@ -6,62 +6,39 @@ from rich.markdown import Markdown
 from rich import print
 import json
 from info import Info
+from pricetracker import pricetracker
+from trending import trends
+from news import news
 
 def cls(): return os.system('cls')
-
-def pricetracker(stock):
-    print()
                 
-def trending():
-    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers"
-
-    querystring = {"region":"US"}
-
-    headers = {
-        'x-rapidapi-key': "623ecea589msh70f225267987d8ep18f5c1jsn34e5895911b9",
-        'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    result = response.json()
-
-    print(result)
-    print()
-    print()
-    print()
-    print()
-    print(result.get('finance')['result'])
-
-def news():
-    print('news')
-
 while True:
     choice1 = ""
     while choice1 == "":
         cls()
         print("Info Price Trends News")
         choice1 = input("Select one: ")
+        choice1 = choice1.lower()
 
     cls()
-    if choice1.lower() == "info":
+    if choice1 == "info":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
         Info(InpStock)
     
-    elif choice1.lower() == "price":
+    elif choice1 == "price":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
         pricetracker(InpStock)
     
-    elif choice1.lower() == "trends":
+    elif choice1 == "trends":
         cls()
-        trending()
+        trends()
     
-    elif choice1.lower() == "news":
-        cls()
+    elif choice1 == "news":
+        news()
 
     print("Press ENTER to continue...")
     keyboard.wait("enter")

@@ -1,0 +1,2 @@
+def pricetracker(stock):
+    print()

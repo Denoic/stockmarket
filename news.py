@@ -1,0 +1,2 @@
+def news():
+    print('news')
