@@ -20,3 +20,4 @@ def trends():
     print()
     print()
     print(result.get('finance')['result'])
+    #still in work
