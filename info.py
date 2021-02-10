@@ -37,7 +37,7 @@ def Info(stock):
     print("[bold red]Zip:[/bold red]")
     print(tickerinfo.get('zip'))
     print()
-    print(BusinessSummary())
+    BusinessSummary()
     print()
     print("[bold red]City:[/bold red]")
     print(tickerinfo.get("city"))

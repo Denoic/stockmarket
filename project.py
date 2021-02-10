@@ -10,6 +10,7 @@ from exit import exit
 
   
 while True:
+    cls()
     print("Info Price Trends News")
     choice = input("Select one: ")
     choice = choice.lower()
@@ -36,7 +37,6 @@ while True:
         news()
 
 
-    print("Press any key to continue...")
-    print("If you want to exit the app. Press ESC")
-    keyboard.wait(hotkey="esc", suppress=False, trigger_on_release=exit())
+    print("Press SPACE to continue...")
+    keyboard.wait("space")
     choice = "" 
