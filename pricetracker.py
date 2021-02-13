@@ -1,10 +1,10 @@
 import yfinance as yf
 from cls import cls
+import yahoo_fin.stock_info as si
+import keyboard
+import requests
+import finnhub
 
 def pricetracker(stock):
-    while True:
-        tickerdata = yf.Ticker(stock)
-        tickerinfo = tickerdata.info
-        cls()
-        print(tickerinfo.get("symbol") + " " + tickerinfo.get('shortName') + " " + str(tickerinfo.get('regularMarketPrice')))
-#not finished
+    print()
+#still in work
