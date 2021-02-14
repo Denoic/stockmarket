@@ -7,11 +7,12 @@ from news import news
 from info import filecreation
 from cls import cls
 from exit import exit
+from about import about
 
 while True:
     choice = ""
     cls()
-    print("Info Price Trends News Exit")
+    print("Info Price Trends News About Exit")
     choice = input("Select one: ")
     choice = choice.lower()
 
@@ -38,8 +39,13 @@ while True:
     elif choice == "news":
         news()
 
+    elif choice == "about":
+        
+        about()
+
     elif choice == "exit":
         exit()
 
+    print()
     print("Press SPACE to continue...")
     keyboard.wait("space") 
