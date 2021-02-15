@@ -18,7 +18,7 @@ while True:
     choice = choice.lower()
     
     
-
+    cls()
     if choice == "info":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
