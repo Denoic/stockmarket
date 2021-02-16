@@ -10,8 +10,6 @@ from exit import exit
 from about import about
 
 while True:
-    choice = ""
-    InpStock = ""
     cls()
     print("Info Price Trends News About Exit")
     choice = input("Select one: ")
