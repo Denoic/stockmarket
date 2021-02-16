@@ -31,14 +31,12 @@ while True:
         pricetracker(InpStock)
 
     elif choice == "trends":
-        cls()
         trends()
 
     elif choice == "news":
         news()
 
     elif choice == "about":
-        cls()
         about()
 
     elif choice == "exit":
