@@ -1,6 +1,6 @@
 # Stock Market
 This is a very easy to use program made in python.
-You can see trending stock markets, you can research ### the stock. And you can track the price of the stock.
+You can see trending stock markets, you can research the stock. And you can track the price of the stock.
 
 # Why should you use this?
 It's more reliable.

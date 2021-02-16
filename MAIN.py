@@ -16,7 +16,7 @@ while True:
     print("Info Price Trends News About Exit")
     choice = input("Select one: ")
     choice = choice.lower()
-    
+
     
     cls()
     if choice == "info":
@@ -25,17 +25,17 @@ while True:
         cls()
         filecreation(InpStock)
         Info(InpStock)
-    
+
     elif choice == "price":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
         pricetracker(InpStock)
-    
+
     elif choice == "trends":
         cls()
         trends()
-    
+
     elif choice == "news":
         news()
 
@@ -52,4 +52,4 @@ while True:
 
     print()
     print("Press SPACE to continue...")
-    keyboard.wait("space") 
+    keyboard.wait("space")
