@@ -1,3 +1,5 @@
-def movers(index):
-    print()
-    #in work
+import requests
+from bs4 import BeautifulSoup
+
+def movers():
+    pass

@@ -1,5 +1,5 @@
 import keyboard
-import json
+from movers import movers
 from info import Info
 from pricetracker import pricetracker
 from trending import trends
@@ -10,8 +10,10 @@ from exit import exit
 from about import about
 
 while True:
+    choice = ""
+    InpStock = ""
     cls()
-    print("Info Price Trends News About Exit")
+    print("Info Price Trends News Movers About Exit")
     choice = input("Select one: ")
     choice = choice.lower()
 
@@ -35,6 +37,9 @@ while True:
 
     elif choice == "news":
         news()
+
+    elif choice == "movers":
+        movers()
 
     elif choice == "about":
         about()
