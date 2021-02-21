@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from rich import print
 from datetime import time, datetime
 import pytz
+import time
 
 def currentmarket(stock):
 
@@ -29,11 +30,14 @@ def currentmarket(stock):
         cls()
         if changevalue < 0:
             print(f"{stock} [bold red] {changevalue} ({changepercent}%) [/bold red]")
+            time.sleep(1)
         elif changevalue > 0:
             print(f"{stock} [bold green] {changevalue} ({changepercent}%) [/bold green]")
+            time.sleep(1)
 
         else:
             print(f"{stock} {changevalue} ({changepercent}%)")
+            time.sleep(1)
 
 def postmarketprice(stock):
 
@@ -66,11 +70,15 @@ def postmarketprice(stock):
         cls()
         if changevalue < 0:
             print(f"{stock} [bold red] {changevalue} ({changepercent}%) [/bold red]")
-            input()
+            time.sleep(1)
+
         elif changevalue > 0:
             print(f"{stock} [bold green] {changevalue} ({changepercent}%) [/bold green]")
+            time.sleep(1)
+
         else:
             print(f"{stock}  {changevalue} ({changepercent}%)")
+            time.sleep(1)
 
 def pricetracker(InputStock):
     EST = pytz.timezone('America/New_York')
@@ -82,6 +90,7 @@ def pricetracker(InputStock):
         if timehour > 9 and timehour <= 16:
             if timeminutes >= 30 and timehour == 4:
                 postmarketprice(InputStock)
+                time.sleep(1)
             else:
                 currentmarket(InputStock)
 

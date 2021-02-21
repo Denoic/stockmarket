@@ -1,5 +1,6 @@
 import keyboard
-from movers import movers
+from movers import gainers
+from movers import losers
 from info import Info
 from pricetracker import pricetracker
 from trending import trends
@@ -8,6 +9,7 @@ from info import filecreation
 from cls import cls
 from exit import exit
 from about import about
+
 
 while True:
     choice = ""
@@ -39,7 +41,23 @@ while True:
         news()
 
     elif choice == "movers":
-        movers()
+        while True:
+            mover = input("Gainers or Losers: ")
+            mover = mover.lower()
+
+            cls()
+
+            if mover == "gainers":
+                gainers()
+                break
+
+            elif mover == 'losers':
+                losers()
+                break
+
+            else:
+                print('Invalid choice')
+
 
     elif choice == "about":
         about()
@@ -52,5 +70,5 @@ while True:
         print("Invalid. Please Try again with a valid option")
 
     print()
-    print("Press SPACE to continue...")
-    keyboard.wait("space")
+    print("Press ESC to continue...")
+    keyboard.wait("esc")
