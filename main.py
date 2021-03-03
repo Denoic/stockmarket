@@ -9,66 +9,81 @@ from info import filecreation
 from cls import cls
 from exit import exit
 from about import about
+from etf import etf
 
 
 while True:
     choice = ""
     InpStock = ""
     cls()
-    print("Info Price Trends News Movers About Exit")
+    print("Info(1) Price(2) Trends(3) Movers(4) ETFs(5) About(6) Exit(7)")
     choice = input("Select one: ")
     choice = choice.lower()
 
     
     cls()
-    if choice == "info":
+    if choice == "info" or choice == "1":
         InpStock = input("Enter ticker: ")
         InpStock = InpStock.upper()
         cls()
         filecreation(InpStock)
         Info(InpStock)
+        print()
+        print("Press ESC to continue...")
+        keyboard.wait("esc")
 
-    elif choice == "price":
+    elif choice == "price" or choice == "2":
         InpStock = input("Enter ticker: ")
-        InpStock = InpStock.upper()
         cls()
-        pricetracker(InpStock)
+        pricetracker(InpStock.upper())
 
-    elif choice == "trends":
+    elif choice == "trends" or choice == "3":
         trends()
+        print()
+        print("Press ESC to continue...")
+        keyboard.wait("esc")
 
-    elif choice == "news":
-        news()
-
-    elif choice == "movers":
+    elif choice == "movers" or choice == "4":
         while True:
-            mover = input("Gainers or Losers: ")
+            mover = input("Gainers(1) or Losers(2): ")
             mover = mover.lower()
 
             cls()
 
-            if mover == "gainers":
+            if mover == "gainers" or mover == "1":
                 gainers()
+                print()
+                print("Press ESC to continue...")
+                keyboard.wait("esc")
                 break
 
-            elif mover == 'losers':
+            elif mover == 'losers' or mover == "2":
                 losers()
+                print()
+                print("Press ESC to continue...")
+                keyboard.wait("esc")
                 break
 
             else:
                 print('Invalid choice')
 
+    elif choice == "etfs" or choice == "5":
+        etf()
+        print()
+        print("Press ESC to continue...")
+        keyboard.wait("esc")
 
-    elif choice == "about":
+    elif choice == "about" or choice == "6":
         about()
+        print()
+        print("Press ESC to continue...")
+        keyboard.wait("esc")
 
-    elif choice == "exit":
+    elif choice == "exit" or choice == "7":
         exit()
 
     else:
-        cls()
         print("Invalid. Please Try again with a valid option")
-
-    print()
-    print("Press ESC to continue...")
-    keyboard.wait("esc")
+        print()
+        print("Press ESC to continue...")
+        keyboard.wait("esc")
