@@ -109,7 +109,7 @@ def pricetracker(InputStock):
 
 
     if timehour > 9 and timehour <= 16:
-        if timeminutes >= 30 and timehour == 4:
+        if timeminutes >= 30 and timehour == 16:
             postmarketprice(InputStock)
         else:
             currentmarket(InputStock)
