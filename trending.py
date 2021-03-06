@@ -6,16 +6,9 @@ import keyboard
 from cls import cls
 
 def trends():
-    while True:
-        if keyboard.is_pressed('esc'):
-            break
-
-        else:
-            cls()
-            res = requests.get("https://finance.yahoo.com/trending-tickers")
-            soup = BeautifulSoup(res.content, 'lxml')
-            table = soup.find_all('table')[0]
-            df = pd.read_html(str(table))
-            print(tabulate(df[0], headers='keys', tablefmt='psql', showindex='never'))
-            print()
-            print("To exit Hold ESC")
+    cls()
+    res = requests.get("https://finance.yahoo.com/trending-tickers")
+    soup = BeautifulSoup(res.content, 'lxml')
+    table = soup.find_all('table')[0]
+    df = pd.read_html(str(table))
+    print(tabulate(df[0], headers='keys', tablefmt='psql', showindex='never'))

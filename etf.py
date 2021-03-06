@@ -6,7 +6,7 @@ import keyboard
 from cls import cls
 
 def etf():
-    res = requests.get("https://finance.yahoo.com/screener/a833a630-a69e-4057-85de-0da9e301512a")
+    res = requests.get("https://etfdb.com/screener/")
     soup = BeautifulSoup(res.content, 'lxml')
     table = soup.find_all('table')[0]
     df = pd.read_html(str(table))
