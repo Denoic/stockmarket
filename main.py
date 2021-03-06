@@ -6,7 +6,6 @@ from pricetracker import pricetracker
 from trending import trends
 from info import filecreation
 from cls import cls
-from exit import exit
 from about import about
 from etf import etf
 from currencies import currencies
