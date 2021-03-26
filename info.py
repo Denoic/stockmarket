@@ -5,13 +5,15 @@ import os
 import requests
 import yfinance as yf
 
+
 def filecreation(stock):
     tickerdata = yf.Ticker(stock)
     tickerinfo = tickerdata.info
 
-    f = open("info.md","w+")
+    f = open("info.md", "w+")
     f.write(tickerinfo.get("longBusinessSummary"))
     f.close()
+
 
 def BusinessSummary():
     console = Console()
@@ -54,4 +56,3 @@ def Info(stock):
     print("[bold red]Employees:[/bold red]")
     print(tickerinfo.get('fullTimeEmployees'))
     print()
-    

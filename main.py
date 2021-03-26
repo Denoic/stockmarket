@@ -19,7 +19,6 @@ while True:
     choice = input("Select one: ")
     choice = choice.lower()
 
-    
     cls()
     if choice == "info" or choice == "1":
         InpStock = input("Enter ticker: ")
@@ -58,7 +57,7 @@ while True:
                 break
 
             else:
-                print('Invalid choice')
+                print('Invalid choice!')
         print()
         print("Press ESC to continue...")
         keyboard.wait("esc")
