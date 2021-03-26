@@ -9,13 +9,14 @@ from cls import cls
 from about import about
 from etf import etf
 from currencies import currencies
+from ideas import ideas
 
 
 while True:
     choice = ""
     InpStock = ""
     cls()
-    print("Info(1) Price(2) Trends(3) Movers(4) ETFs(5) Currencies(6) About(7) Exit(8)")
+    print("Info(1) Price(2) Trends(3) Movers(4) ETFs(5) Currencies(6) About(7) Ideas(8) Exit(9)")
     choice = input("Select one: ")
     choice = choice.lower()
 
@@ -80,7 +81,10 @@ while True:
         print("Press ESC to continue...")
         keyboard.wait("esc")
 
-    elif choice == "exit" or choice == "8":
+    elif choice == "ideas" or choice == "8":
+        ideas()
+
+    elif choice == "exit" or choice == "9":
         exit()
 
     else:
